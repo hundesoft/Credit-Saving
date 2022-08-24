@@ -1,0 +1,10 @@
+ul li {
+  list-style: none;
+}
+mat-toolbar{
+  height: 5%;
+}
+.header-tittle span{
+  font-size: 15pt;
+  padding-left: 100%;
+}
