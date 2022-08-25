@@ -1,0 +1,18 @@
+mat-card {
+  max-width: 30%;
+  margin: 10em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+.headerlogo{
+  width: 30%;
+  height: 30%;
+}
+.back-ground{
+background-image: image('assets/logo/logo.png');
+height: 100%;
+width: 100%;
+}

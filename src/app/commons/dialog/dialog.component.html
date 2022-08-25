@@ -1,76 +1,45 @@
 <h2 mat-dialog-title>Customer Registration Form</h2>
-<div mat-dialog-content>
-  <form  [formGroup]="registrationForm">
-    <div class="row">
-        <div class="column-span-6">
-            <mat-form-field appearance="outline">
-                <mat-label>First Name</mat-label>
-                <input matInput formControlName="fname" placeholder="First Name">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>Last Name</mat-label>
-                <input matInput formControlName="lname" placeholder="Last Name">
-            </mat-form-field>
-        </div>
-        <!-- <div class="column-span-6">
-            <mat-form-field appearance="outline">
-                <mat-label>First Name</mat-label>
-                <input matInput placeholder="First Name">
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-                <mat-label>First Name</mat-label>
-                <input matInput placeholder="First Name">
-            </mat-form-field>
-        </div> -->
-    </div>
-  </form>
-</div>
-<div mat-dialog-action>
-    <button mat-raised-button color="warn" mat-dialog-close>close</button>
-    <button mat-raised-button color="primary"(click)="addCustomer()">add</button>
-</div>
 
-<!-- 
-<form  class="normal-form">
+<form [formGroup]="registrationForm" #formValue="ngForm">
+  <div mat-dialog-content>
     <mat-grid-list cols="2" rowHeight="300px">
       <mat-grid-tile>
         <div class="controles-container">
-          <mat-form-field>
-            <input formControlName="fullName" matInput placeholder="Full Name*">
-            <mat-error>This field is mandatory.</mat-error>
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fname" placeholder="First Name">
           </mat-form-field>
-          <mat-form-field>
-            <input formControlName="email" matInput placeholder="Email">
-            <mat-error>Invalid email address.</mat-error>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lname" placeholder="Last Name">
           </mat-form-field>
-  
-          <mat-form-field>
-            <input formControlName="city" matInput placeholder="City">
+          <mat-form-field appearance="outline">
+            <mat-label>Adress</mat-label>
+            <input matInput formControlName="address" placeholder="Address">
           </mat-form-field>
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
         <div class="controles-container">
-          <div class="add-bottom-padding">
-            <mat-radio-group formControlName="gender">
-              <mat-radio-button value="1">Male</mat-radio-button>
-              <mat-radio-button value="2">Female</mat-radio-button>
-              <mat-radio-button value="3">Other</mat-radio-button>
-            </mat-radio-group>
-          </div>
-          <mat-form-field>
-            <input formControlName="hireDate" matInput [matDatepicker]="picker" placeholder="Hire Date">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+          <mat-form-field appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="fname" placeholder="First Name">
           </mat-form-field>
-          <div class="add-bottom-padding">
-            <mat-checkbox formControlName="isPermanent">Permanent Employee</mat-checkbox>
-          </div>
-          <div class="button-row">
-            <button mat-raised-button color="primary" type="submit" >Submit</button>
-            <button mat-raised-button color="warn">Clear</button>
-          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lname" placeholder="Last Name">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Adress</mat-label>
+            <input matInput formControlName="address" placeholder="Address">
+          </mat-form-field>
         </div>
       </mat-grid-tile>
     </mat-grid-list>
-  </form> -->
+  </div>
+</form>
+<div mat-dialog-action class="dialogAction" >
+  <button mat-raised-button color="warn" mat-dialog-close><mat-icon>close</mat-icon>close</button>
+  <button mat-raised-button color="primary" (click)="addCustomer()" [disabled]="formValue.form.invalid"><mat-icon>add</mat-icon>Save
+  </button>
+</div>

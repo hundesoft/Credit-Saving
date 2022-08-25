@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Customer } from 'src/app/Models/customer.model';
 import { RegisterService } from 'src/app/Services/register.service';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -21,15 +22,13 @@ export interface CustomerData {
 export class RegisterComponent implements OnInit {
 
   
-  customer:any = [];
+  customer:Customer[] = [];
   listData !: MatTableDataSource<any>;
   //displayedColumns: string[] = [];  
   
   // displayedColumns: string[] = ['id', 'fname', 'lname'];
   // dataSource !: MatTableDataSource<CustomerData>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort ;
   constructor(private registerService:RegisterService, private dialog:MatDialog) { }
  
   ngOnInit(): void {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/Services/register.service';
-import { Observable } from 'rxjs';
+import { from, Observable } from 'rxjs';
+import { Dialog, DialogConfig } from '@angular/cdk/dialog';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
@@ -15,19 +16,22 @@ registrationForm !: FormGroup
     this.registrationForm=this.formBuilder.group(
       {
         fname:['',Validators.required],
-        lname: ['', Validators.required]
+        lname: ['', Validators.required],
+        address:['', Validators.required]
       }
     )
   }
+
   addCustomer(){
-    // if(this.registrationForm.valid){
-    //   this.registerService.postData(this.registrationForm.value).
-    //   subscribe((res) => {
-    //     console.log(res);
-    //   });
-    // }
     console.log(this.registrationForm.value);
+    this.registerService.postData(this.registrationForm.value).
+    subscribe((res:any) => {
+      console.log(res);
+    },
+    err=>{
+      console.log(err);
+    }
+    )
   }
-
-
+ 
 }

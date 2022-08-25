@@ -2,6 +2,10 @@ mat-form-field{
     width: 100%;
     margin-top: auto;
 }
-mat-dialog-action{
-    padding: 5px;
+.dialogAction{
+margin-left: 600px;
+}
+
+.controles-container{
+    white-space: 10px;;
 }

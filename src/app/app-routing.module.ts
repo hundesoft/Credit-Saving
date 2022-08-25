@@ -6,23 +6,22 @@ import { LayoutComponent } from './commons/layout/layout.component';
 import { RegisterComponent } from './commons/register/register.component';
 
 const routes: Routes = [
-  // {
-  //   path:'', component:LoginComponent, pathMatch:'full', redirectTo:'login'
-  // },
-  // {
-  //   path:'login', component:LoginComponent
-  // },
+
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
-    path:'',
-    component:LayoutComponent,
-    children:[
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: '',
+    component: LayoutComponent,
+    children: [
       {
-        path:'',
-        component:DashboardComponent
+        path: 'dashboard',
+        component: DashboardComponent
       },
       {
-        path:'register',
-        component:RegisterComponent
+        path: 'register',
+        component: RegisterComponent
       }
     ]
   }
