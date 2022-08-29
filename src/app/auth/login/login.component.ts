@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   loginForm !: FormGroup
- 
-  constructor(private formBuilder: FormBuilder,private router: Router,) { }
+
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group(
@@ -22,7 +23,12 @@ export class LoginComponent implements OnInit {
     )
   }
   login() {
-      this.router.navigateByUrl('/dashboard')
-      console.log(this.loginForm.value, this.loginForm.value);
+    if (this.loginForm.invalid) {
+      return;
+    }
+    this.authService.login(this.loginForm.get('username')?.value, this.loginForm.get('password')?.value)
+      .subscribe((response) => {
+        this.router.navigate(['/dashboard']);
+      });
   }
 }

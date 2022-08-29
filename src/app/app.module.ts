@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonsModule } from './commons/commons.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './auth/auth.module';
+import { DialogModule } from '@angular/cdk/dialog';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,13 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
     CommonsModule,
     HttpClientModule,
-    AuthModule
+    AuthModule,
+    DialogModule
+    
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

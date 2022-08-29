@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { RegistrationFormComponent } from 'src/app/dialogs/registration-form/registration-form.component';
 import { Customer } from 'src/app/Models/customer.model';
 import { RegisterService } from 'src/app/Services/register.service';
 import { DialogComponent } from '../dialog/dialog.component';

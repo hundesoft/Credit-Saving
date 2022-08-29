@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RegisterService } from 'src/app/Services/register.service';
-import { from, Observable } from 'rxjs';
-import { Dialog, DialogConfig } from '@angular/cdk/dialog';
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css']
+  selector: 'app-registration-form',
+  templateUrl: './registration-form.component.html',
+  styleUrls: ['./registration-form.component.css']
 })
-export class DialogComponent implements OnInit {
+export class RegistrationFormComponent implements OnInit {
   registrationForm !: FormGroup
   constructor(private formBuilder: FormBuilder, private registerService: RegisterService) { }
 

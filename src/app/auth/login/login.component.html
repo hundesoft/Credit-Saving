@@ -1,30 +1,30 @@
 <div class="back-ground">
-<mat-card>
+  <mat-card>
     <mat-card-content>
-        <form [formGroup]="loginForm" #loginValid="ngForm">
-            <img class="headerlogo" src="assets/logo/logo.png" alt="no logi">
-            <h2>Login Here</h2>
+      <form [formGroup]="loginForm" #loginValid="ngForm">
+        <img class="headerlogo" src="assets/logo/logo.png" alt="no logi">
+        <mat-toolbar color="primary">Login Here</mat-toolbar>
         <mat-error *ngIf="!loginValid">
           The username and password were not recognized
         </mat-error>
         <div class="controles-container">
-            <mat-form-field appearance="outline">
-              <mat-label>User Name</mat-label>
-              <input matInput formControlName="username" placeholder="User Name">
-              <mat-error>
-                Please provide a valid username 
-              </mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput formControlName="password" placeholder="Password">
-              <mat-error>
-                Please provide a valid password
-              </mat-error>
-            </mat-form-field>
-          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>User Name</mat-label>
+            <input matInput formControlName="username" placeholder="User Name">
+            <mat-error>
+              Please provide a valid username
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" placeholder="Password">
+            <mat-error>
+              Please provide a valid password
+            </mat-error>
+          </mat-form-field>
+        </div>
         <button mat-raised-button color="primary" [disabled]="!loginValid.form.valid" (click)="login()">Login</button>
       </form>
     </mat-card-content>
   </mat-card>
-  </div>
+</div>

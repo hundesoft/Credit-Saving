@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './commons/dashboard/dashboard.component';
 import { LayoutComponent } from './commons/layout/layout.component';
+import { PayrollComponent } from './commons/payroll/payroll.component';
 import { RegisterComponent } from './commons/register/register.component';
+import { UserComponent } from './commons/user/user.component';
 
 const routes: Routes = [
 
@@ -22,6 +24,14 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
+      },
+      {
+        path:'users',
+        component:UserComponent
+      },
+      {
+        path:'payrolls',
+        component:PayrollComponent
       }
     ]
   }

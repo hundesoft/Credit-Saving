@@ -12,7 +12,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSliderModule} from '@angular/material/slider';
@@ -44,6 +44,15 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { UserComponent } from './user/user.component';
+import { PayrollComponent } from './payroll/payroll.component';
+import { UserDialogComponent } from './user-dialog/user-dialog.component';
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 @NgModule({
   declarations: [
@@ -53,6 +62,9 @@ import {MatTableDataSource} from '@angular/material/table';
     LayoutComponent,
     RegisterComponent,
     DialogComponent,
+    UserComponent,
+    PayrollComponent,
+    UserDialogComponent,
     
   ],
   imports: [
@@ -89,7 +101,8 @@ import {MatTableDataSource} from '@angular/material/table';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    PerfectScrollbarModule
   ],
   exports:[
     FlexLayoutModule,
@@ -124,7 +137,16 @@ import {MatTableDataSource} from '@angular/material/table';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatLabel,
+    PerfectScrollbarModule
+    
+  ],
+  providers:[
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ]
 })
 export class CommonsModule { }
